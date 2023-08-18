@@ -11,9 +11,55 @@
 
     <artifactId>scaffolding-dao</artifactId>
 
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>mysql</groupId>-->
+        <!--            <artifactId>mysql-connector-java</artifactId>-->
+        <!--        </dependency>-->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.5</version>
+                <configuration>
+                    <configurationFile>src/main/resources/mybatis-generatorConfig/generatorConfig.xml</configurationFile>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+                <!--<executions>-->
+                <!--<execution>-->
+                <!--<id>Generate MyBatis Artifacts</id>-->
+                <!--<goals>-->
+                <!--<goal>generate</goal>-->
+                <!--</goals>-->
+                <!--</execution>-->
+                <!--</executions>-->
+                <!--<dependencies>-->
+                <!--&lt;!&ndash;					 为插件单独配置mysql驱动&ndash;&gt;-->
+                <!--<dependency>-->
+                <!--<groupId>mysql</groupId>-->
+                <!--<artifactId>mysql-connector-java</artifactId>-->
+                <!--<version>5.1.48</version>-->
+                <!--</dependency>-->
+                <!--</dependencies>-->
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
